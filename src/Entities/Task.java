@@ -1,23 +1,19 @@
 package Entities;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Date;
-
 public class Task {
 
     private String nome;
     private String desc;
-    private String dtermino;
+    private String data;
     private String lvlpriori;
-    private String Cat;
+    private String cat;
 
-    public Task(String nome, String desc, String dtermino, String lvlpriori, String cat) {
+    public Task(String nome, String desc,String data, String lvlpriori, String cat) {
         this.nome = nome;
         this.desc = desc;
-        this.dtermino = dtermino;
+        this.data = data;
         this.lvlpriori = lvlpriori;
-
+        this.cat = cat;
     }
 
     public String getNome() {
@@ -36,26 +32,28 @@ public class Task {
         this.desc = desc;
     }
 
-    public String getDtermino() {return dtermino;}
+    public String getData() {
+        return data;
+    }
 
-    public void setDtermino(String  dtermino) {
-        this.dtermino = dtermino;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getLvlpriori() {
         return lvlpriori;
     }
 
-    public void setLvlpriori(String  lvlpriori) {
+    public void setLvlpriori(String lvlpriori) {
         this.lvlpriori = lvlpriori;
     }
 
     public String getCat() {
-        return Cat;
+        return cat;
     }
 
     public void setCat(String cat) {
-        Cat = cat;
+        this.cat = cat;
     }
 
     @Override
@@ -63,9 +61,9 @@ public class Task {
         return "Task{" +
                 "nome='" + nome + '\'' +
                 ", desc='" + desc + '\'' +
-                ", dtermino=" + dtermino +
-                ", lvlpriori=" + lvlpriori +
-                ", Cat='" + Cat + '\'' +
+                ", data='" + data + '\'' +
+                ", lvlpriori='" + lvlpriori + '\'' +
+                ", cat='" + cat + '\'' +
                 '}';
     }
 }
