@@ -1,25 +1,25 @@
 package App;
+import Entities.Empresa;
 import Entities.Task;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static java.awt.SystemColor.menu;
-import static java.lang.System.exit;
 public class Program {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         List<Task> taskList = new ArrayList<>();
-
+        List<Empresa> empresaList = new ArrayList<>();
 
         String nome = "";
         String desc = "";
         String lvlpriori = "";
         String data = "";
         String cat = "";
+        String nomeEmp = "";
 
         int op = 0;
         do {
@@ -27,7 +27,13 @@ public class Program {
 
             System.out.println("Para listar uma task digite 2");
             String response = sc.next();
+            System.out.println("Deseja criar uma empresa? (y/n)");
+            char responseEmp = sc.next().charAt(0);
+            if(responseEmp == 'y') {
 
+                Empresa empresa1 = new Empresa("nome", "cep");
+                empresaList.add(empresa1);
+            }
             if (response.equals("1")) {
 
                 System.out.println("Nome da task: ");
@@ -55,6 +61,7 @@ public class Program {
             }
 
             System.out.println("Deseja criar outra task?0 para encerrar e 3 para voltar ao inicio");
+
             op = sc.nextInt();
 
         }while(op!= 0);

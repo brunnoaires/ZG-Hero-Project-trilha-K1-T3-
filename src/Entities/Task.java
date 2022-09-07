@@ -16,6 +16,10 @@ public class Task {
         this.cat = cat;
     }
 
+    public Task() {
+
+    }
+
     public String getNome() {
         return nome;
     }
